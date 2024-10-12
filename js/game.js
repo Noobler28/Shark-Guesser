@@ -70,8 +70,10 @@ correctSound.load();
 wrongSound.load();
 
 function playSound(src) {
-    var sound = new Audio(src); // Create a new Audio object with the source file
-    sound.play(); // Play the sound
+    var sound = new Audio(src);
+    sound.play().catch(function(error) {
+        console.error('Error playing sound:', error);
+    });
 }
 
 // Function to show the next shark
