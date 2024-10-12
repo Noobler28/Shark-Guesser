@@ -66,8 +66,11 @@ let score = 0;
 // Load sound effects
 const correctSound = new Audio('sounds/correct.mp3');
 const wrongSound = new Audio('sounds/wrong.mp3');
-correctSound.preload = 'auto'; // Preload correct sound
-wrongSound.preload = 'auto'; // Preload wrong sound
+
+function playSound(src) {
+    var sound = new Audio(src); // Create a new Audio object with the source file
+    sound.play(); // Play the sound
+}
 
 // Function to show the next shark
 function showNextShark() {
