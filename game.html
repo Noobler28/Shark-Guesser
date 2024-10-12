@@ -69,6 +69,19 @@
             { name: "Zebra Shark", image: "images/zebra_shark.jpg" }
         ];
 
+
+	const correctSound = new Audio('sounds/correct.mp3');
+	const wrongSound = new Audio('sounds/wrong.mp3');
+	correctSound.load();
+	wrongSound.load();
+	
+	function playSound(src) {
+	    var sound = new Audio(src);
+	    sound.play().catch(function(error) {
+	        console.error('Error playing sound:', error);
+	    });
+	}
+
          let currentSharkIndex = 0;
          let correctGuesses = 0;
 
