@@ -66,6 +66,8 @@ let score = 0;
 // Load sound effects
 const correctSound = new Audio('sounds/correct.mp3');
 const wrongSound = new Audio('sounds/wrong.mp3');
+correctSound.load();
+wrongSound.load();
 
 function playSound(src) {
     var sound = new Audio(src); // Create a new Audio object with the source file
