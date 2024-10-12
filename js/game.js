@@ -69,11 +69,8 @@ const wrongSound = new Audio('sounds/wrong.mp3');
 correctSound.load();
 wrongSound.load();
 
-function playSound(src) {
-    var sound = new Audio(src);
-    sound.play().catch(function(error) {
-        console.error('Error playing sound:', error);
-    });
+function playSound() {
+  sound.play();
 }
 
 // Function to show the next shark
