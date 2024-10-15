@@ -70,8 +70,8 @@ correctSound.load();
 wrongSound.load();
 
 function playSound() {
-  sound.play(correctSound);
-    sound.play(wrongSound);
+        sound.play(correctSound);
+        sound.play(wrongSound);
 }
 
 // Function to show the next shark
