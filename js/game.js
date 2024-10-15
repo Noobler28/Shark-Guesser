@@ -64,10 +64,8 @@ let currentSharkIndex = 0;
 let score = 0;
 
 // Load sound effects
-const correctSound = new Audio('sounds/correct.mp3');
-const wrongSound = new Audio('sounds/wrong.mp3');
-correctSound.load();
-wrongSound.load();
+let correctSound = new Audio('sounds/correct.mp3');
+let wrongSound = new Audio('sounds/wrong.mp3');
 
 function playSound() {
     correctSound.play();
