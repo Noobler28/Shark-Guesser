@@ -75,11 +75,9 @@
 	correctSound.load();
 	wrongSound.load();
 	
-	function playSound(src) {
-	    var sound = new Audio(src);
-	    sound.play().catch(function(error) {
-	        console.error('Error playing sound:', error);
-	    });
+	function playSound() {
+  	sound.play(correctSound);
+    	sound.play(wrongSound);
 	}
 
          let currentSharkIndex = 0;
