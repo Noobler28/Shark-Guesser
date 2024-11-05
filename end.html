@@ -10,7 +10,7 @@
     <div class="home-container">
         <h1>Thank You for Playing Guess the Shark!</h1>
         <img src="images/logo.png" alt="Game Logo" class="logo">
-        
+
         <div class="score-container">
             <h2 id="final-score"></h2>
             <a href="index.html" class="start-button">Play Again</a>
@@ -32,13 +32,13 @@
     <script>
         // Get score from URL parameters
         const params = new URLSearchParams(window.location.search);
-        const score = params.get('score');
+        const score = parseInt(params.get('score'), 10); // Convert score to an integer
 
         // Display final score
         const finalScoreText = `You guessed ${score}% correct!`;
         document.getElementById('final-score').innerText = finalScoreText;
 
-        // Create share message (no URL)
+        // Create share message
         const shareMessage = `I just scored ${score}% on Guess the Shark!`;
         document.getElementById('share-message').innerText = shareMessage;
 
@@ -76,8 +76,12 @@
 
         // Prompt for player name and update leaderboard
         const playerName = prompt("Please enter your name:");
-        if (playerName) {
-            updateLeaderboard(playerName, score);
+
+        // Validate player name before updating leaderboard
+        if (playerName && playerName.trim()) {
+            updateLeaderboard(playerName.trim(), score); // Trim to avoid spaces
+        } else {
+            alert("Name cannot be empty!"); // Alert if the name is invalid
         }
 
         // Display the leaderboard on page load
